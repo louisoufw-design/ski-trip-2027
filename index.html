@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2027 三月滑雪計畫</title>
+<meta name="description" content="兩位初學者 2027 年三月從大阪出發的日本滑雪計畫：雪場比較、交通、住宿、選板、教練課、季前特訓與旅費試算。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <span class="logo">雪 國 手 帖</span>
+  </header>
+
+  <nav class="toc" id="toc" aria-label="目次">
+    <div class="mbar">
+      <button class="nb" id="prevV" aria-label="上一篇">‹</button>
+      <button class="cur" id="curV" aria-expanded="false" aria-controls="tocLinks"><span class="n" id="curN">01</span><span id="curT">精選雪場</span><span class="caret" aria-hidden="true">▾</span></button>
+      <button class="nb" id="nextV" aria-label="下一篇">›</button>
+    </div>
+    <div class="links" id="tocLinks">
+    <a href="#picks"><span class="n">01</span>精選雪場</a>
+    <a href="#snow"><span class="n">02</span>三月雪報</a>
+    <a href="#heart"><span class="n">03</span>條件評分</a>
+    <a href="#move"><span class="n">04</span>交通</a>
+    <a href="#stay"><span class="n">05</span>住宿戰略</a>
+    <a href="#budget"><span class="n">06</span>旅費帳本</a>
+    <a href="#boards"><span class="n">07</span>選板研究室</a>
+    <a href="#coach"><span class="n">08</span>教練課</a>
+    <a href="#train"><span class="n">09</span>季前特訓</a>
+    <a href="#packing"><span class="n">10</span>行前清單</a>
+    </div>
+  </nav>
+
+  <!-- 01 -->
+  <section class="view" id="v-picks" data-view="picks">
+    <div class="band" data-art="cover"></div>
+    <div class="sec-head"><span class="num">01</span><p class="eyebrow">Editor's Picks</p><h2>精選雪場</h2></div>
+    <dl class="regions">
+      <div><dt>北海道</dt><dd>雪質乾，三月底雪況比較穩；但要搭飛機，雪票和住宿通常比較貴。</dd></div>
+      <div><dt>本州</dt><dd>從大阪坐新幹線就到，雪票便宜，可以順便玩東京；但三月中下旬低海拔的雪容易變濕重。</dd></div>
+    </dl>
+    <div class="verdicts">
+      <div class="verdict"><span class="if">想要雪好、又有中文教練</span><h3>留壽都</h3><p>度假村裡有官方中文雪校，人比二世谷少。缺點是雪票最貴。</p></div>
+      <div class="verdict"><span class="if">三月下旬才能出發</span><h3>富良野</h3><p>內陸乾雪，三月底雪況最穩，初中高雪道 4：4：2。</p></div>
+      <div class="verdict"><span class="if">不想再搭飛機</span><h3>GALA湯澤</h3><p>新大阪搭新幹線經東京約 4 小時，下車就是雪場。建議三月上旬去。</p></div>
+      <div class="verdict"><span class="if">想加幾天東京行程</span><h3>輕井澤王子</h3><p>一半以上是初級道、有中文雪校。持外國護照可用北陸拱型周遊券。</p></div>
+    </div>
+    <h3 class="h3line">雪場名鑑</h3>
+    <div class="chips" role="group" aria-label="篩選">
+      <button class="chip" id="f-all" data-f="all" aria-pressed="true">全部</button>
+      <button class="chip" id="f-hk" data-f="hokkaido" aria-pressed="false">北海道</button>
+      <button class="chip" id="f-hs" data-f="honshu" aria-pressed="false">本州</button>
+      <button class="chip" id="f-tbl" data-f="table" aria-pressed="false">並排比較表</button>
+    </div>
+    <div class="resorts" id="resortList"></div>
+    <div id="cmpBox" hidden>
+      <p class="note" style="margin-bottom:10px">五顆點為最好，「價格」點越多越便宜，「交通」以大阪出發計算。分數是綜合官方資料與公開評價的判斷，供兩人討論用。</p>
+      <div class="tbl-wrap"><table class="wide" id="cmp"></table></div>
+    </div>
+    <p class="note">插畫為本站原創，依各雪場的代表景物繪製。想看實景照片，點每座雪場的「在 Google 地圖看」。</p>
+    <a class="next" href="#snow">下一篇：三月雪報 →</a>
+  </section>
+
+  <!-- 02 -->
+  <section class="view" id="v-snow" data-view="snow" hidden>
+    <div class="band" data-art="snowtab"></div>
+    <div class="sec-head"><span class="num">02</span><p class="eyebrow">March Snow Report</p><h2>三月雪報</h2><p class="sub">三月上中下旬，各雪場的雪況差多少</p></div>
+    <p>本州的輕井澤以人工雪為主、3/31 就收；白馬岩岳是白馬谷最低的雪場，回暖時雪況不穩。北海道內陸的富良野、雪量大的 Kiroro 撐得最久。</p>
+    <div class="legend"><span><b class="s-good">◎</b> 雪況穩定</span><span><b class="s-ok">○</b> 大致可以</span><span><b class="s-bad">△</b> 易濕重、看運氣</span></div>
+    <div class="tbl-wrap snow"><table id="snowTbl" style="min-width:520px"></table></div>
+    <p class="note">一般年份的經驗判斷，實際仍看當年降雪。</p>
+    <a class="next" href="#move">下一篇：交通 →</a>
+  </section>
+
+  <!-- 03 -->
+  <section class="view" id="v-move" data-view="move" hidden>
+    <div class="band" data-art="move"></div>
+    <div class="sec-head"><span class="num">03</span><p class="eyebrow">Getting There</p><h2>交通</h2><p class="sub">選一座雪場，看從大阪怎麼去、要多久、花多少</p></div>
+    <div class="chips" role="group" aria-label="選擇雪場" id="moveChips"></div>
+    <div class="legend"><span><i style="background:var(--plane)"></i>飛機</span><span><i style="background:var(--rail)"></i>鐵路</span><span><i style="background:var(--bus)"></i>巴士</span><span><i style="background:var(--walk)"></i>步行、等候</span></div>
+    <div class="routes" id="routes"></div>
+    <h3 class="h3line">這條路線能用的周遊券</h3>
+    <div class="passes" id="passes"></div>
+    <p class="note">時間、票價以 2026 年 10 月查詢為準，標「估」的為估算。周遊券多數限持外國護照、以短期滯在入境的旅客購買，台灣護照觀光入境符合。</p>
+    <a class="next" href="#stay">下一篇：住宿戰略 →</a>
+  </section>
+
+  <!-- 04 -->
+  <section class="view" id="v-stay" data-view="stay" hidden>
+    <div class="band" data-art="stay"></div>
+    <div class="sec-head"><span class="num">04</span><p class="eyebrow">Where to Stay</p><h2>住宿戰略</h2><p class="sub">住雪場旁，還是住遠一點每天通勤</p></div>
+    <p>住遠一點住宿比較便宜、晚上好逛，但每天要花時間來回。下面 8 座雪場各算一次，滑雪天數和晚數可以改。</p>
+    <div class="stay-ctl">
+      <label class="field" for="st-ski">滑雪天數<input id="st-ski" type="number" min="1" max="10" value="3"></label>
+      <label class="field" for="st-night">住宿晚數<input id="st-night" type="number" min="1" max="12" value="4"></label>
+    </div>
+    <div class="legend"><span><i style="background:var(--ao)"></i>住雪場旁</span><span><i style="background:var(--warn)"></i>住遠一點（住宿＋通勤）</span></div>
+    <div class="staygrid" id="stayGrid"></div>
+    <p class="note">住宿為兩人一房、中價位每人每晚估算；通勤費以每人計，標「估」的為估算。</p>
+    <a class="next" href="#boards">下一篇：選板研究室 →</a>
+  </section>
+
+  <!-- 05 -->
+  <section class="view" id="v-boards" data-view="boards" hidden>
+    <div class="band" data-art="boards"></div>
+    <div class="sec-head"><span class="num">05</span><p class="eyebrow">Ski or Board</p><h2>選板研究室</h2><p class="sub">雙板和單板，第一次該選哪個</p></div>
+
+    <div class="duel">
+      <div class="side ski"><p class="eyebrow">Ski</p><h3>雙板</h3><p>前期好上手，比較快能自己滑下山。</p></div>
+      <div class="vsmark" aria-hidden="true">VS</div>
+      <div class="side board"><p class="eyebrow">Snowboard</p><h3>單板</h3><p>前兩天摔比較多，過了撞牆期進步很快。</p></div>
+    </div>
+
+    <div class="vsgrid" role="table" aria-label="雙板與單板比較">
+      <div class="vrow head" role="row"><span role="columnheader">項目</span><span role="columnheader">雙板</span><span role="columnheader">單板</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">第一天</span><span role="cell">站得住，用「八字」慢慢滑下緩坡</span><span role="cell">大部分時間在跌倒、爬起來</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">自己下綠線</span><span role="cell">通常 1–2 天</span><span role="cell">通常 2–3 天</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">之後的進步</span><span role="cell">練好平行轉彎比較久</span><span role="cell">過了撞牆期很快</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">常受傷部位</span><span role="cell">膝蓋（扭到）</span><span role="cell">手腕、尾椎、屁股</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">鞋子</span><span role="cell">硬殼，走路像機器人</span><span role="cell">軟，像登山鞋，好走</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">上下纜車</span><span role="cell">比較簡單</span><span role="cell">要單腳踩板滑下來</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">平地移動</span><span role="cell">有雪杖可以撐</span><span role="cell">要解開一隻腳用推的</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">要拿的東西</span><span role="cell">兩片板＋兩支雪杖</span><span role="cell">一塊板</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">建議護具</span><span role="cell">安全帽</span><span role="cell">安全帽、護腕、護臀、護膝</span></div>
+      <div class="vrow" role="row"><span class="k" role="rowheader">適合誰</span><span role="cell">想快點能滑、怕一直摔</span><span role="cell">不怕摔、想追求速度感</span></div>
+    </div>
+
+    <div class="quiz" id="quiz">
+      <h3 class="h3line">三題幫你選</h3>
+      <div class="q"><span>1. 第一天最想要的是？</span><div class="opts" data-q="0">
+        <button class="chip" data-v="ski" aria-pressed="false">趕快能滑下山</button><button class="chip" data-v="board" aria-pressed="false">摔多也沒關係，想玩帥的</button></div></div>
+      <div class="q"><span>2. 比較怕哪裡受傷？</span><div class="opts" data-q="1">
+        <button class="chip" data-v="board" aria-pressed="false">膝蓋</button><button class="chip" data-v="ski" aria-pressed="false">手腕、屁股</button></div></div>
+      <div class="q"><span>3. 有扁平足或腳容易痠嗎？</span><div class="opts" data-q="2">
+        <button class="chip" data-v="board" aria-pressed="false">有</button><button class="chip" data-v="none" aria-pressed="false">沒有</button></div></div>
+      <div class="result" id="quizResult" aria-live="polite">選完三題，這裡會顯示建議。</div>
+    </div>
+
+    <div class="flat">
+      <div>
+        <p class="eyebrow">Flat Feet</p>
+        <h3>有扁平足，推薦哪個？</h3>
+        <p class="answer">傾向推薦單板。但比起選哪種板，<mark>鞋墊和鞋子合不合腳</mark>影響更大。</p>
+        <p style="margin-top:10px;font-size:15px">扁平足的腳踩下去時，足弓會往內塌。雙板鞋是硬殼，又要扣得很緊，腳在裡面一塌就容易痠痛、抽筋，膝蓋也比較容易往內倒。單板鞋軟很多，對腳型比較包容。</p>
+      </div>
+      <div>
+        <p style="font-weight:700;margin-bottom:8px">不管選哪個，都這樣做</p>
+        <ul>
+          <li>帶一雙<b>足弓支撐硬一點、腳跟杯比較深</b>的鞋墊，直接換進租來的鞋</li>
+          <li>腳痛不要租大一號，鞋太大腳會在裡面滑，更痛</li>
+          <li>選雙板的話，租鞋時說要「初學者用的軟鞋」</li>
+          <li>第一天每 1–2 小時脫鞋休息一下</li>
+          <li>平常就有腳痛或膝蓋痛，出發前先問骨科或復健科</li>
+        </ul>
+      </div>
+    </div>
+    <a class="next" href="#coach">下一篇：教練課 →</a>
+  </section>
+
+  <!-- 06 -->
+  <section class="view" id="v-coach" data-view="coach" hidden>
+    <div class="band" data-art="coach"></div>
+    <div class="sec-head"><span class="num">06</span><p class="eyebrow">Lessons</p><h2>教練課</h2><p class="sub">上幾天、半天還是全天、去哪裡找中文教練</p></div>
+
+    <h3 class="h3line">別人通常怎麼上</h3>
+    <div class="tbl-wrap"><table style="min-width:560px">
+      <thead><tr><th>來源</th><th>雙板初學者</th><th>單板初學者</th></tr></thead>
+      <tbody>
+        <tr><th>白馬滑雪顧問 SamuraiSnow</th><td>第 1 天<b>全天</b>，之後 <b>2 個半天</b>。一開始上太多反而吸收不了</td><td><b>2–3 個全天</b>，因為單板前期進步比較慢</td></tr>
+        <tr><th>滑雪旅遊網站 WeSki</th><td colspan="2">每天<b>上午團體課</b>（一堂約 2–3 小時），下午休息讓腳恢復。大多數人在<b>第 3–5 天</b>進步最多</td></tr>
+        <tr><th>滑雪媒體 InTheSnow</th><td>—</td><td>平均約 <b>3 天</b>才能在藍線上連續轉彎</td></tr>
+        <tr><th>日本雪校實際課程</th><td colspan="2">團體課常見 <b>2 小時</b>或 <b>4 小時</b>；私人課常見<b>半天 3 小時</b>、<b>全天 6 小時</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="plan">
+      <div><p class="eyebrow">Our Plan</p><h3>滑 3 天的話這樣排</h3></div>
+      <ul>
+        <li><b>雙板</b>：第 1 天全天課，第 2 天上午半天課，第 3 天自己滑</li>
+        <li><b>單板</b>：第 1、2 天全天課，第 3 天上午可以再補半天</li>
+        <li>下午上完課腳會很痠，不要硬撐，提早收工泡溫泉</li>
+        <li>三月是旺季尾聲，課程還是建議出發前先預約</li>
+      </ul>
+    </div>
+
+    <h3 class="h3line">團體課還是中文私人課</h3>
+    <div class="duel">
+      <div class="side ski"><p class="eyebrow">Group</p><h3>團體課</h3>
+        <ul class="mini"><li>一班約 6–10 人，同程度一起上</li><li>多數用日文或英文教</li><li>半天約 ¥10,500–15,000／人</li></ul></div>
+      <div class="vsmark" aria-hidden="true">VS</div>
+      <div class="side board"><p class="eyebrow">Private</p><h3>中文私人課</h3>
+        <ul class="mini"><li>一位教練只教你們，通常最多 4 人</li><li>台灣、香港教練，用中文教</li><li>半天約 ¥45,000 起，<b>兩人分攤約 ¥23,000／人</b></li></ul></div>
+    </div>
+    <p>兩個人一起上中文私人課，每人比團體課貴約 ¥8,000，但聽得懂、教練只看你們兩個，進步通常比較快。</p>
+
+    <h3 class="h3line">有中文教練的雪校</h3>
+    <div class="schools">
+      <div class="school"><div class="hd"><h3>追雪滑雪學校</h3><span class="region">二世谷・留壽都・Kiroro</span></div>
+        <p>台灣、香港教練，可用中文、廣東話、英文上課。私人課。</p>
+        <dl class="facts"><dt>二世谷</dt><dd>半天 ¥46,000 起・全天 ¥74,000 起</dd><dt>留壽都</dt><dd>全天 ¥95,000 起</dd><dt>Kiroro</dt><dd>全天 ¥110,000 起</dd></dl>
+        <a class="maplink" href="https://www.chaseforsnow.com/" target="_blank" rel="noopener">官網 chaseforsnow.com</a></div>
+      <div class="school"><div class="hd"><h3>雪浪 Snow and Flow</h3><span class="region">二世谷</span></div>
+        <p>中文、廣東話、英文私人課，最多 4 人一起上。在比羅夫或安努普利上課。</p>
+        <dl class="facts"><dt>時數</dt><dd>半天 3 小時・全天 6 小時</dd><dt>價格</dt><dd>¥45,023 起（訂票平台列價）</dd></dl>
+        <a class="maplink" href="https://livejapan.com/zh-tw/in-hokkaido/in-pref-hokkaido/in-niseko_rusutsu/activity-skiing_and_snowboarding/ka0615910/" target="_blank" rel="noopener">查看課程頁</a></div>
+      <div class="school"><div class="hd"><h3>留壽都中文私人課</h3><span class="region">留壽都</span></div>
+        <p>2017 年起在二世谷、留壽都、Kiroro 授課的團隊，教練來自台灣、香港、中國，持國際教練證照。</p>
+        <dl class="facts"><dt>價格</dt><dd>¥83,250（Klook 列價）</dd></dl>
+        <a class="maplink" href="https://livejapan.com/zh-tw/in-hokkaido/in-pref-hokkaido/in-niseko_rusutsu/activity-family_friendly_activities/ac0124527/" target="_blank" rel="noopener">查看課程頁</a></div>
+      <div class="school"><div class="hd"><h3>粉雪天堂</h3><span class="region">留壽都</span></div>
+        <p>留壽都度假村唯一的官方中文雪校，可以用魔毯區教初學者、走教學專用的纜車通道。</p>
+        <dl class="facts"><dt>價格</dt><dd>未公開，需直接詢問</dd></dl>
+        <a class="maplink" href="https://www.google.com/search?q=%E7%B2%89%E9%9B%AA%E5%A4%A9%E5%A0%82+%E7%95%99%E5%A3%BD%E9%83%BD+%E6%BB%91%E9%9B%AA%E5%AD%B8%E6%A0%A1" target="_blank" rel="noopener">搜尋粉雪天堂</a></div>
+      <div class="school"><div class="hd"><h3>輕井澤王子場內中文雪校</h3><span class="region">輕井澤王子</span></div>
+        <p>雪場內有兩間中文雪校。其中熊貓人滑雪學校以 3–9 歲兒童課為主，大人課要另外詢問。</p>
+        <dl class="facts"><dt>價格</dt><dd>需向雪校詢問</dd></dl>
+        <a class="maplink" href="https://watabi.org/articles/karuizawa-prince-ski-guide" target="_blank" rel="noopener">查看雪場指南</a></div>
+      <div class="school dim"><div class="hd"><h3>其他雪場</h3><span class="region">富良野・TOMAMU・GALA・白馬</span></div>
+        <p>沒找到固定的中文雪校。可以上雪場的英文團體課，或在 Klook、KKday 搜尋「雪場名＋中文教練」，有些私人教練會跨雪場授課。</p></div>
+    </div>
+    <p class="note">價格為 2026 年 10 月查到的「起」價，實際依人數、時段和教練等級不同。</p>
+
+    <details class="method">
+      <summary>資料來源</summary>
+      <ul class="srcs">
+        <li><a href="https://www.samuraisnow.com/node/5265924" target="_blank" rel="noopener">SamuraiSnow：Hakuba Ski Concierge 建議</a></li>
+        <li><a href="https://www.weski.com/guides/how-to-book-ski-lessons" target="_blank" rel="noopener">WeSki：How to book ski lessons</a></li>
+        <li><a href="https://inthesnow.com/get-snowboarding" target="_blank" rel="noopener">InTheSnow：Get snowboarding</a></li>
+        <li><a href="https://www.snowmonkeyresorts.com/zh-hant/activities/shiga-kogen-international-ski-school/" target="_blank" rel="noopener">志賀高原國際滑雪學校課程價格</a></li>
+        <li><a href="https://www.triptojapan.com/blog/japan-ski-trip-cost" target="_blank" rel="noopener">二世谷團體課價格（triptojapan）</a></li>
+        <li><a href="https://www.chaseforsnow.com/" target="_blank" rel="noopener">追雪滑雪學校官網</a></li>
+        <li><a href="https://livejapan.com/zh-tw/in-hokkaido/in-pref-hokkaido/in-niseko_rusutsu/activity-skiing_and_snowboarding/ka0615910/" target="_blank" rel="noopener">雪浪 Snow and Flow 課程（LIVE JAPAN）</a></li>
+        <li><a href="https://livejapan.com/zh-tw/in-hokkaido/in-pref-hokkaido/in-niseko_rusutsu/activity-family_friendly_activities/ac0124527/" target="_blank" rel="noopener">留壽都中文私人課（LIVE JAPAN／Klook）</a></li>
+        <li><a href="https://www.nzsia.org/category/vacancies/page/3" target="_blank" rel="noopener">粉雪天堂徵才資訊（NZSIA）</a></li>
+        <li><a href="https://watabi.org/articles/karuizawa-prince-ski-guide" target="_blank" rel="noopener">輕井澤王子滑雪場指南（watabi）</a></li>
+        <li><a href="https://hk.trip.com/blog/karuizawa-ski/" target="_blank" rel="noopener">熊貓人滑雪學校介紹（Trip.com）</a></li>
+      </ul>
+    </details>
+    <a class="next" href="#train">下一篇：季前特訓 →</a>
+  </section>
+
+  <!-- train -->
+  <section class="view" id="v-train" data-view="train" hidden>
+    <div class="band" data-art="train"></div>
+    <div class="sec-head"><span class="num">09</span><p class="eyebrow">Pre-season</p><h2>季前特訓</h2><p class="sub">現在到三月，可以先練什麼</p></div>
+    <div class="countdown"><span>距離 2027 年 3 月 1 日還有</span><b id="cdDays">—</b><span>天，大約 <b id="cdWeeks" style="font-size:inherit">—</b> 週</span></div>
+    <div class="subtabs" role="tablist" aria-label="季前特訓">
+      <button class="st" role="tab" id="tt-plan" data-p="plan" aria-selected="true">時間表</button>
+      <button class="st" role="tab" id="tt-menu" data-p="menu" aria-selected="false">菜單・打卡</button>
+      <button class="st" role="tab" id="tt-off" data-p="off" aria-selected="false">場外練習</button>
+    </div>
+
+    <div class="panel" data-p="plan" role="tabpanel" aria-labelledby="tt-plan">
+      <p>物理治療師建議至少出發前 4–8 週開始練。你們時間很充裕，可以分段慢慢加量，到日本第一天腿比較不會抖，也比較不容易受傷。</p>
+      <ol class="phases">
+        <li><span class="when">11–12 月</span><div><b>打底期</b><p>每週 2–3 次菜單，每個動作 1–2 組就好。有氧從 15 分鐘慢慢加到 30 分鐘。</p></div></li>
+        <li><span class="when">1 月</span><div><b>加量期</b><p>每個動作加到 3 組。有氧加到 45 分鐘，可以跑步、騎車、游泳或爬樓梯。</p></div></li>
+        <li><span class="when">2 月</span><div><b>專項期</b><p>多練靠牆蹲、側跳和單腳平衡。這個月去台灣的室內模擬機上一堂課，先熟悉板子。</p></div></li>
+        <li><span class="when">出發前一週</span><div><b>減量</b><p>只做輕鬆的伸展和短時間有氧，不要練到痠。把鞋墊、雪鏡、手套準備好。</p></div></li>
+      </ol>
+    </div>
+
+    <div class="panel" data-p="menu" role="tabpanel" aria-labelledby="tt-menu" hidden>
+      <div class="chips" role="group" aria-label="訓練方式">
+        <button class="chip" id="md-body" data-m="body" aria-pressed="true">徒手版（在家、營區）</button>
+        <button class="chip" id="md-gym" data-m="gym" aria-pressed="false">健身房版</button>
+      </div>
+      <p class="note m-body">每次約 25 分鐘，不用器材。每週 2–3 次。</p>
+      <p class="note m-gym">重量選到最後 2 下會吃力的程度。有氧可以用飛輪或划船機，健身房有滑雪機（SkiErg）更好。</p>
+      <ul class="exs" id="exs">
+      <li class="ex"><div><b><span class="m-body">深蹲</span><span class="m-gym">槓鈴背蹲</span></b><span class="note">滑雪的基本姿勢就是半蹲</span></div><span class="dose"><span class="m-body">3 組 × 12 下</span><span class="m-gym">3 組 × 8–10 下</span></span><span class="tg both">雙板・單板</span></li>
+      <li class="ex"><div><b><span class="m-body">靠牆蹲</span><span class="m-gym">腿推機＋最後一下停住</span></b><span class="note">大腿耐力，滑完一整條不腿軟</span></div><span class="dose"><span class="m-body">3 組 × 30–60 秒</span><span class="m-gym">3 組 × 12 下，停 30 秒</span></span><span class="tg both">雙板・單板</span></li>
+      <li class="ex"><div><b><span class="m-body">弓箭步</span><span class="m-gym">啞鈴走路弓箭步</span></b><span class="note">前後腳出力，單板特別用得到</span></div><span class="dose"><span class="m-body">3 組 × 每腳 10 下</span><span class="m-gym">3 組 × 每腳 10 下</span></span><span class="tg both">雙板・單板</span></li>
+      <li class="ex"><div><b><span class="m-body">扶椅單腳蹲</span><span class="m-gym">保加利亞分腿蹲</span></b><span class="note">穩定膝蓋，減少扭傷</span></div><span class="dose"><span class="m-body">2 組 × 每腳 8 下</span><span class="m-gym">3 組 × 每腳 8 下</span></span><span class="tg ski">雙板更需要</span></li>
+      <li class="ex"><div><b><span class="m-body">左右側跳</span><span class="m-gym">跳箱側跳或敏捷梯</span></b><span class="note">轉彎時重心左右換邊</span></div><span class="dose"><span class="m-body">3 組 × 20 下</span><span class="m-gym">3 組 × 20 下</span></span><span class="tg ski">雙板更需要</span></li>
+      <li class="ex"><div><b><span class="m-body">側棒式</span><span class="m-gym">加重側棒式或 Pallof press</span></b><span class="note">核心和髖部側邊，控制身體不歪</span></div><span class="dose"><span class="m-body">3 組 × 每邊 30 秒</span><span class="m-gym">3 組 × 每邊 10 下</span></span><span class="tg both">雙板・單板</span></li>
+      <li class="ex"><div><b><span class="m-body">臀橋</span><span class="m-gym">槓鈴臀推</span></b><span class="note">臀部出力，保護膝蓋和下背</span></div><span class="dose"><span class="m-body">3 組 × 12 下</span><span class="m-gym">3 組 × 10 下</span></span><span class="tg both">雙板・單板</span></li>
+      <li class="ex"><div><b><span class="m-body">單腳站立</span><span class="m-gym">BOSU 球單腳站或 BOSU 深蹲</span></b><span class="note">練平衡，模擬雪面不平</span></div><span class="dose"><span class="m-body">每腳 30 秒 × 3</span><span class="m-gym">3 組 × 30 秒</span></span><span class="tg board">單板更需要</span></li>
+      </ul>
+      <p class="note">有舊傷，特別是膝蓋，先問復健科或物理治療師要不要調整動作。</p>
+      <h3 class="h3line">特訓打卡</h3>
+      <ul class="todo" id="todo">
+        <li><label><input type="checkbox" id="td-1">連續 8 週，每週練 2–3 次</label></li>
+        <li><label><input type="checkbox" id="td-2">有氧能持續做 45 分鐘</label></li>
+        <li><label><input type="checkbox" id="td-3">靠牆蹲撐到 60 秒</label></li>
+        <li><label><input type="checkbox" id="td-4">單腳閉眼站 30 秒不晃</label></li>
+        <li><label><input type="checkbox" id="td-5">上過一堂室內模擬機</label></li>
+        <li><label><input type="checkbox" id="td-6">決定好單板還是雙板</label></li>
+      </ul>
+      <p class="note">打勾的紀錄只存在你自己的瀏覽器裡。</p>
+    </div>
+
+    <div class="panel" data-p="off" role="tabpanel" aria-labelledby="tt-off" hidden>
+      <h3 class="h3line">先看教學影片</h3>
+      <div class="vids">
+        <a class="vid" href="https://www.youtube.com/watch?v=LaF1tT1l7c0" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▶</span><span><b>雙板入門（含犁式煞車）</b><small>How to Ski: A Beginner's Guide｜PSIA-AASI</small></span><span class="tg ski">雙板</span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=lF2lf5RGCOw" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▶</span><span><b>單板入門</b><small>How to Snowboard: A Beginner's Guide｜PSIA-AASI</small></span><span class="tg board">單板</span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=OsbpD8BN10k" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▶</span><span><b>單板第一堂課實錄</b><small>Live Coaching: Beginner Snowboard Lesson Pt. 1｜Snowboard Addiction</small></span><span class="tg board">單板</span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=zLFAlw8Nt-w" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▶</span><span><b>單板怎麼跌倒不受傷</b><small>How To Fall (Without Getting Hurt) On A Snowboard｜Ed Shreds</small></span><span class="tg board">單板</span></a>
+      </div>
+      <p class="note">以上是英文影片，可以開 YouTube 的自動翻譯字幕。想看中文的，可以直接搜：
+        <a href="https://www.youtube.com/results?search_query=%E9%9B%99%E6%9D%BF%20%E7%8A%81%E5%BC%8F%E7%85%9E%E8%BB%8A%20%E6%95%99%E5%AD%B8" target="_blank" rel="noopener">雙板 犁式煞車</a>、
+        <a href="https://www.youtube.com/results?search_query=%E9%9B%99%E6%9D%BF%20%E5%85%AB%E5%AD%97%E8%BD%89%E5%BD%8E%20%E5%88%9D%E5%AD%B8" target="_blank" rel="noopener">雙板 八字轉彎</a>、
+        <a href="https://www.youtube.com/results?search_query=%E5%96%AE%E6%9D%BF%20%E8%90%BD%E8%91%89%E9%A3%84%20%E6%95%99%E5%AD%B8" target="_blank" rel="noopener">單板 落葉飄</a>、
+        <a href="https://www.youtube.com/results?search_query=%E5%96%AE%E6%9D%BF%20%E5%BE%8C%E5%88%83%20%E7%85%9E%E8%BB%8A%20%E5%88%9D%E5%AD%B8" target="_blank" rel="noopener">單板 後刃煞車</a></p>
+      <div class="guide">
+        <article><h3>學會怎麼跌倒</h3><ul>
+          <li>快跌倒時不要伸直手去撐地，容易傷到手腕和肩膀</li>
+          <li>雙板：往側邊屁股坐下去，膝蓋保持彎曲</li>
+          <li>單板：往後跌就坐下、手握拳收在胸前；往前跌用前臂著地</li></ul></article>
+        <article><h3>平常就能練</h3><ul>
+          <li>單板可以玩滑板，練前後腳的重心轉移</li>
+          <li>刷牙時單腳站，左右腳輪流</li>
+          <li>能走樓梯就不坐電梯</li></ul></article>
+      </div>
+      <h3 class="h3line">台灣可以先體驗的地方</h3>
+    <div class="schools">
+      <div class="school"><div class="hd"><h3>台北滑雪學校</h3><span class="region">台北</span></div><p>課程從認識雪具教到連續轉彎</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E6%BB%91%E9%9B%AA%E5%AD%B8%E6%A0%A1" target="_blank" rel="noopener">📍 在 Google 地圖看</a></div>
+      <div class="school"><div class="hd"><h3>Craftzy Sports Club</h3><span class="region">台北</span></div><p>室內滑雪訓練模擬機，教練依程度調整</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Craftzy%20Sports%20Club%20%E5%8F%B0%E5%8C%97" target="_blank" rel="noopener">📍 在 Google 地圖看</a></div>
+      <div class="school"><div class="hd"><h3>iSKI 滑雪俱樂部 桃園店</h3><span class="region">桃園</span></div><p>無限雪道模擬機，有成人初階班，附全套裝備</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=iSKI%E6%BB%91%E9%9B%AA%E4%BF%B1%E6%A8%82%E9%83%A8%20%E6%A1%83%E5%9C%92" target="_blank" rel="noopener">📍 在 Google 地圖看</a></div>
+      <div class="school"><div class="hd"><h3>小叮噹滑雪場</h3><span class="region">新竹</span></div><p>室內雪場，有雪毯滑雪區</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E5%8F%AE%E5%99%B9%E7%A7%91%E5%AD%B8%E4%B8%BB%E9%A1%8C%E6%A8%82%E5%9C%92%20%E6%BB%91%E9%9B%AA%E5%A0%B4" target="_blank" rel="noopener">📍 在 Google 地圖看</a></div>
+      <div class="school"><div class="hd"><h3>SNOWTOWN 雪樂地</h3><span class="region">台中</span></div><p>恆溫室內雪場，偏向玩雪體驗</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=SNOWTOWN%20%E9%9B%AA%E6%A8%82%E5%9C%B0%20%E5%8F%B0%E4%B8%AD" target="_blank" rel="noopener">📍 在 Google 地圖看</a></div>
+      <div class="school"><div class="hd"><h3>嘉義滑雪學校</h3><span class="region">嘉義</span></div><p>小班制，有單板新手班</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%98%89%E7%BE%A9%E6%BB%91%E9%9B%AA%E5%AD%B8%E6%A0%A1" target="_blank" rel="noopener">📍 在 Google 地圖看</a></div>
+    </div>
+      <p class="note">價格和課程內容請直接向各場館查詢。出發前上一堂模擬機課，到日本第一天會比較快進入狀況。</p>
+    </div>
+
+    <details class="method">
+      <summary>資料來源</summary>
+      <ul class="srcs">
+        <li><a href="https://hss.edu/article_injury-free-skiing.asp" target="_blank" rel="noopener">HSS：Injury-free skiing（物理治療師建議）</a></li>
+        <li><a href="https://www.nuffieldhealth.com/article/how-to-prepare-your-body-for-the-skiing-season" target="_blank" rel="noopener">Nuffield Health：How to prepare your body for the skiing season（含槓鈴深蹲、BOSU、滑雪機建議）</a></li>
+        <li><a href="https://n.yam.com/Article/20250120627194" target="_blank" rel="noopener">蕃新聞：在台 6 大滑雪體驗推薦</a></li>
+        <li><a href="https://thesnowpros.org/2018/10/psia-aasi-snow-operating-launch-new-beginners-guide-to-skiing-and-snowboarding-videos/" target="_blank" rel="noopener">PSIA-AASI：初學者教學影片</a></li>
+      </ul>
+    </details>
+    <a class="next" href="#packing">下一篇</a>
+  </section>
+
+  <!-- 06 -->
+  <section class="view" id="v-heart" data-view="heart" hidden>
+    <div class="band" data-art="heart"></div>
+    <div class="sec-head"><span class="num">08</span><p class="eyebrow">Weighted Score</p><h2>條件評分</h2><p class="sub">依你們重視的條件，算出每座雪場的分數</p></div>
+    <p>每座雪場在 7 個條件上各有 1–5 分。把重要的條件往右拉、不重要的拉到最左邊，系統會依權重算出 100 分制的總分，右邊的排名即時更新。兩個人可以各調一次，比較前幾名是否一致。</p>
+    <div class="weigh">
+      <div class="sliders" id="sliders"></div>
+      <ol class="rank" id="rankList"></ol>
+    </div>
+    <a class="next" href="#budget">下一篇：旅費帳本 →</a>
+  </section>
+
+  <!-- 07 -->
+  <section class="view" id="v-budget" data-view="budget" hidden>
+    <div class="band" data-art="budget"></div>
+    <div class="sec-head"><span class="num">09</span><p class="eyebrow">Travel Ledger</p><h2>旅費帳本</h2><p class="sub">挑 2–3 座雪場並排比較，每人大概花多少</p></div>
+    <div class="chips" role="group" aria-label="選擇要比較的雪場（最多 3 座）" id="budChips"></div>
+    <div class="form">
+      <label class="field" for="b-ski">滑雪天數<input id="b-ski" type="number" min="1" max="10" value="3"></label>
+      <label class="field" for="b-night">住宿晚數<input id="b-night" type="number" min="1" max="12" value="4"></label>
+      <label class="field" for="b-lesson">上課天數<input id="b-lesson" type="number" min="0" max="10" value="2"></label>
+      <label class="field" for="b-ltype">課程類型<select id="b-ltype"><option value="15000">團體課半天（¥15,000／人）</option><option value="23000">中文私人課半天，兩人分攤（約 ¥23,000／人）</option><option value="37000">中文私人課全天，兩人分攤（約 ¥37,000／人）</option></select></label>
+      <label class="field" for="b-rate">匯率（1 日圓＝台幣）<input id="b-rate" type="number" step="0.005" min="0.1" max="0.4" value="0.205"></label>
+      <label class="check" for="b-wear"><input id="b-wear" type="checkbox" checked>雪衣雪褲也用租的</label>
+    </div>
+    <div class="receipts" id="receipts" aria-live="polite"></div>
+    <p class="note">標 <span class="off">查詢</span> 的是已公布價格或 2026 年 10 月查到的票價；標 <span class="est">估</span> 的是估算值。每張帳單可以各自選交通方式和住哪裡。</p>
+    <details class="method">
+      <summary>這些數字怎麼估的</summary>
+      <div class="tbl-wrap" style="border:0"><table style="min-width:520px">
+        <thead><tr><th>項目</th><th>用的數字</th><th>依據</th></tr></thead>
+        <tbody>
+          <tr><td>雪票</td><td>一日券 × 天數</td><td>二世谷、留壽都、GALA、輕井澤、白馬是 26-27 已公布價格；富良野、Kiroro、TOMAMU 還沒公布，參考同等級雪場估</td></tr>
+          <tr><td>雪板＋雪鞋</td><td>¥8,000／天</td><td>二世谷比羅夫 26-27 官方租借雙板＋雪鞋 ¥8,500，其他雪場通常比較便宜，取整數估</td></tr>
+          <tr><td>雪衣雪褲</td><td>¥4,000／天</td><td>一般雪場常見價位的估算，二世谷這類國際雪場會更貴</td></tr>
+          <tr><td>教練課</td><td>¥15,000–37,000／天</td><td>團體課參考二世谷 GoSnow 三月半天團體課 ¥15,000；中文私人課參考雪浪半天 ¥45,023、追雪二世谷全天 ¥74,000 起，兩人分攤</td></tr>
+          <tr><td>住宿、通勤</td><td>見「住宿戰略」</td><td>中價位雙人房兩人均攤估算；通勤用查到的票價或估算</td></tr>
+          <tr><td>大阪交通</td><td>見「交通」</td><td>你在帳單裡選的那條路線，來回 × 2</td></tr>
+          <tr><td>吃飯</td><td>¥4,000／天</td><td>二世谷拉麵約 ¥1,200–1,800、晚餐約 ¥3,000 起，其他地方通常更便宜</td></tr>
+          <tr><td>匯率</td><td>1 日圓 ≈ NT$0.205</td><td>可以自己改成出發前的匯率</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+    <a class="next" href="#packing">下一篇：行前清單 →</a>
+  </section>
+
+  <!-- 08 -->
+  <section class="view" id="v-packing" data-view="packing" hidden>
+    <div class="band" data-art="packing"></div>
+    <div class="sec-head"><span class="num">10</span><p class="eyebrow">Before You Go</p><h2>行前清單</h2><p class="sub">要穿什麼、要帶什麼、五天怎麼排</p></div>
+    <h3 class="h3line">從頭到腳要穿什麼</h3>
+    <div class="chips" role="group" aria-label="板子種類">
+      <button class="chip" id="gk-ski" data-k="ski" aria-pressed="true">雙板</button>
+      <button class="chip" id="gk-board" data-k="board" aria-pressed="false">單板</button>
+    </div>
+    <div class="gear">
+      <div class="fig"><svg viewBox="0 0 300 500" id="gearFig" role="img" aria-label="穿好全套裝備的人">
+        <g class="k-ski"><line x1="70" y1="248" x2="40" y2="470" stroke="var(--sub)" stroke-width="4"/><line x1="230" y1="248" x2="260" y2="470" stroke="var(--sub)" stroke-width="4"/>
+          <rect x="110" y="436" width="26" height="60" rx="13" fill="var(--warn)"/><rect x="164" y="436" width="26" height="60" rx="13" fill="var(--warn)"/></g>
+        <g class="k-board"><rect x="40" y="440" width="220" height="22" rx="11" fill="var(--warn)"/></g>
+        <path d="M100 136 L64 236 L84 244 L116 160Z" fill="var(--ao)"/><path d="M200 136 L236 236 L216 244 L184 160Z" fill="var(--ao)"/>
+        <path d="M98 250 L202 250 L198 410 L156 410 L150 300 L144 410 L102 410Z" fill="var(--mt2)"/>
+        <path d="M96 132 Q150 118 204 132 L208 256 L92 256Z" fill="var(--ao)"/>
+        <line x1="150" y1="128" x2="150" y2="256" stroke="var(--paper)" stroke-width="2" stroke-dasharray="4 4"/>
+        <path d="M128 110 L172 110 L176 130 Q150 138 124 130Z" fill="var(--good)"/>
+        <circle cx="150" cy="80" r="32" fill="#f1cfa8"/>
+        <path d="M114 80 A36 38 0 0 1 186 80 L186 74 L114 74Z" fill="var(--ink)"/>
+        <rect x="118" y="72" width="64" height="20" rx="10" fill="var(--sub)"/><rect x="124" y="75" width="52" height="14" rx="7" fill="var(--warn)" opacity=".85"/>
+        <rect x="58" y="236" width="30" height="26" rx="10" fill="var(--ink)"/><rect x="212" y="236" width="30" height="26" rx="10" fill="var(--ink)"/>
+        <rect x="100" y="404" width="46" height="40" rx="8" fill="var(--ink)"/><rect x="154" y="404" width="46" height="40" rx="8" fill="var(--ink)"/>
+        <g id="gearDots"></g>
+      </svg></div>
+      <ol class="gearlist" id="gearList"></ol>
+    </div>
+    <p class="note">標「自帶」的建議自己買或帶，標「可租」的雪場都租得到。點圖上的號碼或清單，可以對照位置。</p>
+    <div class="guide">
+      <article>
+        <h3>證件和雜物</h3>
+        <ul>
+          <li>護照（買周遊券、租裝備要用）</li>
+          <li>防曬乳和護唇膏，雪地反光很強</li>
+          <li>暖暖包、小毛巾</li>
+        </ul>
+      </article>
+      <article>
+        <h3>為什麼一定要上課</h3>
+        <ul>
+          <li>學會停下來和轉彎，才能安全上纜車</li>
+          <li>中文教練溝通比較不累，問題可以問到懂</li>
+          <li>雙板：第 1 天全天、第 2 天半天；單板：前 2 天全天（詳見「教練課」）</li>
+        </ul>
+      </article>
+      <article>
+        <h3>五天行程範例（北海道）</h3>
+        <div class="days">
+          <div class="day"><b>DAY1</b><span>大阪飛新千歲，坐巴士到雪場，租好裝備</span></div>
+          <div class="day"><b>DAY2</b><span>上午團體課，下午在初學區練停和轉</span></div>
+          <div class="day"><b>DAY3</b><span>再上一天課，試著滑完整條綠線</span></div>
+          <div class="day"><b>DAY4</b><span>自己滑，傍晚泡溫泉</span></div>
+          <div class="day"><b>DAY5</b><span>上午輕鬆滑或去札幌、小樽逛，晚上飛回大阪</span></div>
+        </div>
+      </article>
+      <article>
+        <h3>五天行程範例（輕井澤）</h3>
+        <div class="days">
+          <div class="day"><b>DAY1</b><span>大阪坐新幹線經東京（或北陸拱型周遊券經敦賀）到輕井澤，走路到雪場租裝備，晚上逛 Outlet</span></div>
+          <div class="day"><b>DAY2</b><span>全天課，在 D1 王子滑雪道等初級道練停和轉</span></div>
+          <div class="day"><b>DAY3</b><span>上午半天課，下午自己練，泡飯店溫泉</span></div>
+          <div class="day"><b>DAY4</b><span>上午自己滑，下午去舊輕井澤銀座、雲場池散步</span></div>
+          <div class="day"><b>DAY5</b><span>新幹線到東京玩半天，再回大阪</span></div>
+        </div>
+        <p class="note">輕井澤 3/31 就收，三月下旬雪況差，建議排在三月上旬。</p>
+      </article>
+    </div>
+    <a class="next" href="#picks">回到第一篇：精選雪場 →</a>
+  </section>
+
+  <footer>
+    <span>資料查詢於 2026 年 10 月 27 日。雪票、季節日期、交通票價、周遊券以各官方網站為準；26-27 雪季尚未公布的價格以估算呈現。</span>
+  </footer>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
